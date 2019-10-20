@@ -1,0 +1,22 @@
+@(wsUrl: String)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kafka-Stream</title>
+        <script>
+            console.log("@wsUrl");
+
+            var websocket = new WebSocket("@wsUrl");
+            websocket.onmessage = function(event) {
+
+                var out = document.getElementById("out");
+                out.textContent = event.data;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="out">Connecting...</h1>
+
+    </body>
+</html>
